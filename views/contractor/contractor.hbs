@@ -9,11 +9,11 @@
 
 <body>
 
-    {{>contractornavbar}}
-    
+    {{>navbar isAdmin=isAdmin}}
+
     <div class="container">
         <div class="msg">{{msg}}</div>
-        {{> adminProducts products=products}}
+        {{> shopProducts products=contractors}}
     </div>
 </body>
 

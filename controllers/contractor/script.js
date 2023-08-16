@@ -1,7 +1,10 @@
 const Labour=require('../../models/Labours')
 
 const getContractorPanel=(req,res)=>{
-res.render('contractor/contractor')
+res.render('contractor/contractor'),{
+    isAdmin: req.user.isAdmin,
+    isContractor:req.user.isContractor
+}
 }
 
 const addlabourpage=async(req,res)=>{
