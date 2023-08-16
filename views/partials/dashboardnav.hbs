@@ -8,6 +8,9 @@
         <a class="navItem" href="/admin/products">Admin Products</a>
         <a class="navItem" href="/admin/add-product">Add Products</a>
     {{/if}}
+    {{#if this.isContractor}}
+        <a class="navItem" href="/contractor/panel">contractor panel</a>
+    {{/if}}
     <a href="/logout" class="navItem">Logout</a>
 
   </div>
