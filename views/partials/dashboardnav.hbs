@@ -1,19 +1,5 @@
 <nav class="navbar">
-  <div>
-    <a class="navItem" href="#">Profile</a>
-    <a class="navItem" href="/shop/labours">Hire Labour</a>
-    <a class="navItem" href="/shop/showcontractors">Hire contractor</a>
-
-    {{#if this.isAdmin}}
-        <a class="navItem" href="/admin/products">Admin Products</a>
-        <a class="navItem" href="/admin/add-product">Add Products</a>
-    {{/if}}
-    {{#if this.isContractor}}
-        <a class="navItem" href="/contractor/panel">contractor panel</a>
-    {{/if}}
-    <a href="/logout" class="navItem">Logout</a>
-
-  </div>
+  {{>navbar}}
   <div class="cart">
    <a href="#"><img src="/assets/greencart.png" alt="cart"></a>
   </div>

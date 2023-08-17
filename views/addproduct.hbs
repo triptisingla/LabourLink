@@ -9,7 +9,7 @@
 
 <body>
 
-    {{>navbar isAdmin=isAdmin}}
+    {{>navbar}}
     <div class="addproduct-container">
         <div class="msg">{{msg}}</div>
 
@@ -22,6 +22,11 @@
     <input type="number" id="Labour_wages" name="Labour_wages"><br>
     <label for="Labour_image" >Your Image</label>
     <input type="file" id="Labour_image" name="Labour_image"><br>
+    <label for="dropdown">Choose an option:</label>
+    <select id="dropdown" name="profession">
+        <option value="labour">Labour</option>
+        <option value="contractor">Contractor</option>
+    </select><br>
     <button>Submit</button>
         </form>
 

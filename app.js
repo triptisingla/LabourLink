@@ -11,6 +11,8 @@ const hbs = require('hbs');
 const fileUpload=require('express-fileupload')
 const ifNotLoggedIn = require('./middlewares/checkedLoggedIn');
 const isLoggedIn = require('./middlewares/isLoggedIn');
+const bodyParser=require('body-parser')
+
 
 app.use(flash());
 app.set('view engine', 'hbs');
@@ -18,6 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 require('dotenv').config()
 hbs.registerPartials(__dirname + '/views/partials');
+app.use(bodyParser.json());
 
 app.use(fileUpload({
     useTempFiles : true,
@@ -48,10 +51,10 @@ app.use('/clientlogin',require('./routes/clientlogin'))
 app.use('/login', ifNotLoggedIn, require('./routes/clientlogin'));
 app.use('/dashboard',require('./routes/dashboard'))
 
-app.use('/admin', isLoggedIn, require('./routes/admin'));
+app.use('/admin', require('./routes/admin'));
 app.use('/shop', isLoggedIn, require('./routes/shop'));
 app.use('/contractor',require('./routes/contractor'))
-
+app.use('/labourcontractor',require('./routes/labourcontractor'))
 app.get('/logout', function (req, res, next) {
     req.logout(function (err) {
         if (err) { return next(err); }

@@ -22,16 +22,16 @@ passport.use(new LocalStrategy(
 
 
 passport.serializeUser(function (user, done) {
-    done(null, user.id);
+    return done(null, user.id);
 });
 
 passport.deserializeUser(async function (id, done) {
     try {
         let user = await Users.findOne({ _id: id });
-        done(null, user);
+        return done(null, user);
     }
     catch (err) {
-        done(err);
+        return done(err);
     }
 });
 

@@ -1,0 +1,22 @@
+<div class="productsList">
+    {{#each this.contractors as |contractor|}}
+    <div class="productItem">
+        <div class="productItem-img-container">
+            <img src="{{contractor.imageUrl}}"><br>
+        </div>
+        <div class="productItem-info-wrapper">
+            <div class="productItem-info">
+                <div class="name">Name:-{{contractor.contractor_name}}</div>
+                <div class="price">Wages:-${{contractor.contractor_budget}}</div>
+                <div class="description">{{contractor.Labour_profession}}</div>
+            </div>
+            <div class="productItem-action">
+                <button productId={{contractor._id}} class="addToCart">Undo request</button>
+
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+
+{{!-- <script src="/scripts/addtocart.js"></script> --}}

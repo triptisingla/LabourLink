@@ -15,9 +15,9 @@ const userSchema = new Schema({
         type: Boolean,
         default: false
     },
-    isContractor:{
-        type:Boolean,
-        default:false
+    isContractor: {
+        type: Boolean,
+        default: false
     }
 });
 

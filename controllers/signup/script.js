@@ -21,7 +21,7 @@ module.exports.postSignup= async (req,res,next)=>{
             bcrypt.hash(password, salt, async function(err, hash) {
                 await Users.create({username,password: hash});
                 req.flash('msg','Signup Successful');
-                res.redirect('/login');
+                res.redirect('/admin/add-product');
             });
         });
     }
